@@ -28,7 +28,7 @@ function App() {
   }
   const user4: User = {
     id: 4,
-    name: "Tayyab Raza",
+    name: "Tayyab Raza Ali",
     designation: "CEO",
   }
   return (

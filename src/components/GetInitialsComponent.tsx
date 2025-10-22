@@ -1,21 +1,19 @@
-import { useEffect, useState } from "react"
+import {useEffect, useState } from "react"
 import type { User } from "../App";
 interface GetInitialsComponentProps {
     user: User;
 }
 const GetInitialsComponent = ({ user }: GetInitialsComponentProps) => {
     const [result, setResult] = useState<string>("")
-
-    useEffect(() => {
-        const fullName = user.name
-        if (fullName) {
-            const [firstName, LastName] = fullName.split(" ");
-            const firstArr = [...firstName];
-            const secondArr = [...LastName];
-            console.log(firstArr)
-            setResult(firstArr[0] + secondArr[0])
-        }
-    })
+     useEffect(() => {
+         const fullName = user.name
+         if (fullName) {
+             const [firstName, lastName] = fullName.split(" ");
+             const firstArr = [...firstName];
+             const secondArr = [...lastName];
+             setResult(firstArr[0] + secondArr[0])
+         }
+     })
     return (
         <div className="flex p-4">
             <div className="flex gap-2 w-96 h-32 border-gray-500 rounded shadow">
