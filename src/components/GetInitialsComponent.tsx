@@ -7,12 +7,17 @@ const GetInitialsComponent = ({ user }: GetInitialsComponentProps) => {
     const [result, setResult] = useState<string>("")
      useEffect(() => {
          const fullName = user.name
-         if (fullName) {
+         if (fullName.includes(" ")) {
              const [firstName, lastName] = fullName.split(" ");
              const firstArr = [...firstName];
              const secondArr = [...lastName];
              setResult(firstArr[0] + secondArr[0])
-         }
+            }
+            else{
+                const arr = [...fullName]
+                setResult(arr[0])
+
+            }
      })
     return (
         <div className="flex p-4">

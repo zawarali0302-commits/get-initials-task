@@ -23,7 +23,7 @@ function App() {
   }
   const user3: User = {
     id: 3,
-    name: "Iqra Masood",
+    name: "Iqra",
     designation: "Manager",
   }
   const user4: User = {
