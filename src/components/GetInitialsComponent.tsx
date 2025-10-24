@@ -4,27 +4,25 @@ interface GetInitialsComponentProps {
     user: User;
 }
 const GetInitialsComponent = ({ user }: GetInitialsComponentProps) => {
-    const [result, setResult] = useState<string>("")
-     useEffect(() => {
-         const fullName = user.name
+    const getInitials = (name: string):string => {
+        const fullName = user.name
          if (fullName.includes(" ")) {
              const [firstName, lastName] = fullName.split(" ");
              const firstArr = [...firstName];
              const secondArr = [...lastName];
-             setResult(firstArr[0] + secondArr[0])
+            return (firstArr[0] + secondArr[0]).toUpperCase();
             }
             else{
                 const arr = [...fullName]
-                setResult(arr[0])
-
+                return arr[0].toUpperCase();
             }
-     })
+    }
     return (
         <div className="flex p-4">
             <div className="flex gap-2 w-96 h-32 border-gray-500 rounded shadow">
                 <div className="flex w-1/3 items-center justify-center">
                     <div className="flex items-center justify-center rounded-full bg-blue-300 size-20">
-                        <h1 className="text-4xl text-blue-800">{result}</h1>
+                        <h1 className="text-4xl text-blue-800">{getInitials(user.name)}</h1>
                     </div>
                 </div>
                 <div className="flex flex-col items-center justify-center w-2/3">
