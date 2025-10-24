@@ -4,15 +4,14 @@ interface GetInitialsComponentProps {
 }
 const GetInitialsComponent = ({ user }: GetInitialsComponentProps) => {
     const getInitials = (name:string):string => {
-        const fullName = user.name
-         if (fullName.includes(" ")) {
-             const [firstName, lastName] = fullName.split(" ");
+         if (name.includes(" ")) {
+             const [firstName, lastName] = name.split(" ");
              const firstArr = [...firstName];
              const secondArr = [...lastName];
             return (firstArr[0] + secondArr[0]).toUpperCase();
             }
             else{
-                const arr = [...fullName]
+                const arr = [...name]
                 return arr[0].toUpperCase();
             }
     }
