@@ -1,10 +1,9 @@
-import {useEffect, useState } from "react"
 import type { User } from "../App";
 interface GetInitialsComponentProps {
     user: User;
 }
 const GetInitialsComponent = ({ user }: GetInitialsComponentProps) => {
-    const getInitials = (name: string):string => {
+    const getInitials = (name:string):string => {
         const fullName = user.name
          if (fullName.includes(" ")) {
              const [firstName, lastName] = fullName.split(" ");
